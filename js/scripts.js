@@ -45,7 +45,7 @@
             //start the ajax
             $.ajax({
                 //this is the php file that processes the data and send mail
-                url: "http://hbapi.gongdu.xin/api/v1/email/message", 
+                url: "https://gongdu.xin/index/message/email", 
                 
                 //GET method is used
                 type: "POST",
@@ -93,7 +93,7 @@
             //start the ajax
             $.ajax({
                 //this is the php file that processes the data and send mail
-                url: "http://hbapi.gongdu.xin/api/v1/email/message", 
+                url: "https://gongdu.xin/index/message/email", 
                 
                 //GET method is used
                 type: "POST",
