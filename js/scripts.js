@@ -28,6 +28,54 @@
         );
 
         //if submit button is clicked
+        $('#website-ask').click(function () {
+            //Get the data from all the fields
+            var name = $('input[name=full_name]');
+            var phone = $('input[name=phone]');
+            var website = $('input[name=website]');
+            // var comment = $('textarea[name=comment]');
+
+            if(validateNickname(name.val())){
+                return false;
+            };
+            if(validatePhone(phone.val())){
+                return false;
+            };
+            
+            //start the ajax
+            $.ajax({
+                //this is the php file that processes the data and send mail
+                url: "http://hbapi.gongdu.xin/api/v1/email/message", 
+                
+                //GET method is used
+                type: "POST",
+
+                //pass the data         
+                data: {full_name: name.val(), phone: phone.val(), website: website.val()},     
+                
+                //Do not cache the page
+                cache: false,
+                
+                //success
+                success: function (html) {              
+                    //if process.php returned 1/true (send mail success)
+                    if (html===true) {                  
+                        //hide the form
+                        // $('.contact-form').fadeOut('slow');                 
+                        
+                        //show the success message
+                        $('.done2').html("<b>收到！</b>我们将在24小时内联系您");
+                        
+                    //if process.php returned 0/false (send mail failed)
+                    } else alert('留言失败，请稍后重试~');               
+                }       
+            });
+            
+            //cancel the submit button default behaviours
+            return false;
+        }); 
+
+        //if submit button is clicked
         $('#website-message').click(function () {
             //Get the data from all the fields
             var name = $('input[name=username]');
@@ -41,39 +89,11 @@
             if(validatePhone(phone.val())){
                 return false;
             };
-
-            //Simple validation to make sure user entered something
-            //If error found, add hightlight class to the text field
-            // if (name.val()=='') {
-            //     name.addClass('alert alert-danger');
-            //     return false;
-            // } else name.removeClass('alert alert-success');
-            
-            // if (phone.val()=='') {
-            //     phone.addClass('alert alert-danger');
-            //     return false;
-            // } else phone.removeClass('alert alert-success');
-            
-            // if (comment.val()=='') {
-            //     comment.addClass('alert alert-danger');
-            //     return false;
-            // } else comment.removeClass('alert alert-success');
-            
-            //organize the data properly
-            // var data = 'name=' + name.val() + '&phone=' + phone.val() + '&website=' + 
-            // website.val() + '&comment='  + comment.val();
-            // alert(data);
-            
-            //disabled all the text fields
-            $('.text').attr('disabled','true');
-            
-            //show the loading sign
-            $('.loading').show();
             
             //start the ajax
             $.ajax({
                 //this is the php file that processes the data and send mail
-                url: "http://api.htks.io/api/v1/email/message", 
+                url: "http://hbapi.gongdu.xin/api/v1/email/message", 
                 
                 //GET method is used
                 type: "POST",
