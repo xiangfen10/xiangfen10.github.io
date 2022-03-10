@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /fonts/
 Disallow: /css/
 Disallow: /js/
+Sitemap: https://xiangfen10.github.io/sitemap.xml
