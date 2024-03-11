@@ -1,2 +1,8 @@
 gems:
   - jekyll-sitemap
+
+# 分页
+paginate: 10
+paginate_path: "a/106/:num"
+
+subtitle: "CHAP pipe mould"
