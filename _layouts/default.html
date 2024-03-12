@@ -304,11 +304,17 @@
             </li>
           <li class="col-sm-8">
                 <ul>
-                  <li><a href="a/114.html">
-                        <div class="index-newsdesc">
-                            <h3 class="name">Build-up welding of casting pipe mould <span class="date">2022-05-22</span></h3>
-                        </div>
-                    </a></li><li><a href="a/113.html">
+                    <!-- 循环输出最新的10条 -->
+                    {% for post in site.posts offset:0 limit:10 %} 
+                    <li>
+                        <a href="{{ post.url }}">
+                            <div class="index-newsdesc">
+                                <h3 class="name">{{ post.title }} <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span></h3>
+                            </div>
+                        </a>
+                    </li>
+                    {% endfor %}
+                <!-- <li><a href="a/113.html">
                         <div class="index-newsdesc">
                             <h3 class="name">Maintenance of Cast Pipe Mould after Taking Out <span class="date">2022-05-15</span></h3>
                         </div>
@@ -340,7 +346,7 @@
                         <div class="index-newsdesc">
                             <h3 class="name">Obtained a national utility model patent <span class="date">2022-03-28</span></h3>
                         </div>
-                    </a></li>
+                    </a></li> -->
 
                 </ul>
             </li>
