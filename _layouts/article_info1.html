@@ -221,12 +221,12 @@
       <dl>
 			<dd><span>上一条：</span>
                 {% if page.previous %}
-          <a href="{{ page.previous.url }}">{{ page.previous.title | truncatewords:5 }}</a>   
+          <a href="{{ page.previous.url }}">{{ page.previous.title }}</a>   
           {% endif %}
         </dd>
         <dd><span>下一条：</span>
             {% if page.next %}
-          <a href="{{ page.next.url }}">{{ page.next.title | truncatewords:5 }}</a>
+          <a href="{{ page.next.url }}">{{ page.next.title  }}</a>
           {% endif %}
         </dd>
       </dl> 
