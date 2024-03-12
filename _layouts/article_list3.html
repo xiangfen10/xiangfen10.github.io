@@ -155,10 +155,14 @@
         
         <ul class="inside-tab-main clearfix">
           <li class="" data-rel="107">
-                <h4><a href="1072.html" class="a1">Company news </a><span class="arrorright-btn"></span></h4>  
-            </li><li class="" data-rel="108">
-                <h4><a href="" class="a1">Industry news </a><span class="arrorright-btn"></span></h4>  
-            </li>           
+                <h4><a href="1062.html" class="a1">Company news </a><span class="arrorright-btn"></span></h4>  
+            </li>
+            <li class="" data-rel="108">
+                <h4><a href="1082.html" class="a1">Industry news </a><span class="arrorright-btn"></span></h4>  
+            </li>
+            <li class="cur" data-rel="108">
+                <h4><a href="1072.html" class="a1">Qualification&Honor </a><span class="arrorright-btn"></span></h4>  
+            </li>          
         </ul>
     </div>
 
@@ -167,22 +171,40 @@
     </div>
 </div>
 <script>
-    $(function () {
-  			var url = window.location.pathname;
-			url = url.substring(url.lastIndexOf('/') + 1, url.length);
+   //  $(function () {
+  	// 		var url = window.location.pathname;
+			// url = url.substring(url.lastIndexOf('/') + 1, url.length);
   
-        $(".inside-tab ul li").each(function () {
-            var arel = $(this).attr("data-rel");
-            if (arel == url)
-            { $(this).addClass("cur"); }
-        })
-    })
+   //      $(".inside-tab ul li").each(function () {
+   //          var arel = $(this).attr("data-rel");
+   //          if (arel == url)
+   //          { $(this).addClass("cur"); }
+   //      })
+   //  })
 </script>
 
     
       <div class="company-News commonweb">
             <div class="wcompany-list" id="list">
+                {% for post in site.categories.[page.category] %} 
                 <dl class="clearfix">
+                    <dt>
+                        <a href="114.html">
+                            <img src="{{ post.cover }}" alt="{{ post.title }}">
+                        </a>
+                    </dt>
+                    <dd>
+                        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                        <span class="time">2022-05-22 </span>
+                         <!-- <span class="click">4</span> -->
+                        <p class="deails"> {{ post.excerpt | truncatewords:5 }} </p>
+                        <p class="deailsbtn">
+                            <a href="{{ post.url }}">read more...</a>
+                        </p>
+                    </dd>
+                </dl>
+                {% endfor %}
+     <!--            <dl class="clearfix">
                     <dt>
                         <a href="http://en.chapmachman.com/a/103.html">
                             <img src="../storage/15291/article/20211219/1639883348971616.jpg" alt="The Benefits of Ductile Iron Pipe">
@@ -191,7 +213,6 @@
                     <dd>
                         <h3><a href="http://en.chapmachman.com/a/103.html">The Benefits of Ductile Iron Pipe</a></h3>
                         <span class="time">2021-12-19 </span>
-                         <!-- <span class="click">10</span> -->
                         <p class="deails"> Water and wastewater pipelines are essential for a ...</p>
                         <p class="deailsbtn">
                             <a href="http://en.chapmachman.com/a/103.html">查看详情</a>
@@ -206,7 +227,6 @@
                     <dd>
                         <h3><a href="102.html">How to use and Maintenance of water-cooled centrifugal cast pipe moulds</a></h3>
                         <span class="time">2021-11-27 </span>
-                         <!-- <span class="click">16</span> -->
                         <p class="deails"> Centrifugal ductile iron pipe mould is referred as ...</p>
                         <p class="deailsbtn">
                             <a href="102.html">查看详情</a>
@@ -221,7 +241,6 @@
                     <dd>
                         <h3><a href="101.html">The difference of flexible cast iron pipe and ductile iron pipe</a></h3>
                         <span class="time">2021-11-13 </span>
-                         <!-- <span class="click">17</span> -->
                         <p class="deails"> Flexible cast iron pipes are also called cast iron ...</p>
                         <p class="deailsbtn">
                             <a href="101.html">查看详情</a>
@@ -236,20 +255,19 @@
                     <dd>
                         <h3><a href="100.html">Why should heat treatment be carried out on the blank of cast pipe molud?</a></h3>
                         <span class="time">2021-02-26 </span>
-                         <!-- <span class="click">198</span> -->
                         <p class="deails"> In order to make the blank of the cast pipe mould  ...</p>
                         <p class="deailsbtn">
                             <a href="100.html">查看详情</a>
                         </p>
                     </dd>
-                </dl>
+                </dl> -->
                               
             </div>
-            <div class="pagess">
+          <!--   <div class="pagess">
             <ul>
                
             </ul>
-          </div>
+          </div> -->
         </div>
 
 

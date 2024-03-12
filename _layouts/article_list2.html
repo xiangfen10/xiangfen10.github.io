@@ -155,9 +155,13 @@
         
         <ul class="inside-tab-main clearfix">
           <li class="" data-rel="107">
-                <h4><a href="" class="a1">Company news </a><span class="arrorright-btn"></span></h4>  
-            </li><li class="" data-rel="108">
+                <h4><a href="1062.html" class="a1">Company news </a><span class="arrorright-btn"></span></h4>  
+            </li>
+            <li class="cur" data-rel="108">
                 <h4><a href="1082.html" class="a1">Industry news </a><span class="arrorright-btn"></span></h4>  
+            </li>
+            <li class="" data-rel="108">
+                <h4><a href="1072.html" class="a1">Qualification&Honor </a><span class="arrorright-btn"></span></h4>  
             </li>           
         </ul>
     </div>
@@ -167,21 +171,40 @@
     </div>
 </div>
 <script>
-    $(function () {
-  			var url = window.location.pathname;
-			url = url.substring(url.lastIndexOf('/') + 1, url.length);
+   //  $(function () {
+  	// 		var url = window.location.pathname;
+			// url = url.substring(url.lastIndexOf('/') + 1, url.length);
   
-        $(".inside-tab ul li").each(function () {
-            var arel = $(this).attr("data-rel");
-            if (arel == url)
-            { $(this).addClass("cur"); }
-        })
-    })
+   //      $(".inside-tab ul li").each(function () {
+   //          var arel = $(this).attr("data-rel");
+   //          if (arel == url)
+   //          { $(this).addClass("cur"); }
+   //      })
+   //  })
 </script>
 
     
       <div class="company-News commonweb">
             <div class="wcompany-list" id="list">
+                {% for post in site.categories.[page.category] %} 
+                <dl class="clearfix">
+                    <dt>
+                        <a href="114.html">
+                            <img src="{{ post.cover }}" alt="{{ post.title }}">
+                        </a>
+                    </dt>
+                    <dd>
+                        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                        <span class="time">2022-05-22 </span>
+                         <!-- <span class="click">4</span> -->
+                        <p class="deails"> {{ post.excerpt | truncatewords:5 }} </p>
+                        <p class="deailsbtn">
+                            <a href="{{ post.url }}">read more...</a>
+                        </p>
+                    </dd>
+                </dl>
+                {% endfor %}
+<!-- 
                 <dl class="clearfix">
                     <dt>
                         <a href="114.html">
@@ -191,7 +214,6 @@
                     <dd>
                         <h3><a href="114.html">Build-up welding of casting pipe mould</a></h3>
                         <span class="time">2022-05-22 </span>
-                         <!-- <span class="click">3</span> -->
                         <p class="deails"> The welded pipe mould is placed on the supporting  ...</p>
                         <p class="deailsbtn">
                             <a href="114.html">查看详情</a>
@@ -206,7 +228,6 @@
                     <dd>
                         <h3><a href="113.html">Maintenance of Cast Pipe Mould after Taking Out</a></h3>
                         <span class="time">2022-05-15 </span>
-                         <!-- <span class="click">2</span> -->
                         <p class="deails"> The pipe mould shall be soaked or sprayed to reduc ...</p>
                         <p class="deailsbtn">
                             <a href="113.html">查看详情</a>
@@ -221,7 +242,6 @@
                     <dd>
                         <h3><a href="112.html">Working Condition of Pipe Mould</a></h3>
                         <span class="time">2022-05-08 </span>
-                         <!-- <span class="click">4</span> -->
                         <p class="deails"> In the production process of water-cooled centrifu ...</p>
                         <p class="deailsbtn">
                             <a href="112.html">查看详情</a>
@@ -236,7 +256,6 @@
                     <dd>
                         <h3><a href="111.html">Storage of mould after use</a></h3>
                         <span class="time">2022-05-01 </span>
-                         <!-- <span class="click">6</span> -->
                         <p class="deails"> The pipe mould after using must be performed grind ...</p>
                         <p class="deailsbtn">
                             <a href="111.html">查看详情</a>
@@ -251,7 +270,6 @@
                     <dd>
                         <h3><a href="110.html">Grinding and Peening of Casting Pipe Mould</a></h3>
                         <span class="time">2022-04-23 </span>
-                         <!-- <span class="click">41</span> -->
                         <p class="deails"> 1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The function of p ...</p>
                         <p class="deailsbtn">
                             <a href="110.html">查看详情</a>
@@ -266,7 +284,6 @@
                     <dd>
                         <h3><a href="109.html">Management of Pipe Mould before Use</a></h3>
                         <span class="time">2022-04-17 </span>
-                         <!-- <span class="click">8</span> -->
                         <p class="deails"> 1．Incoming inspectionl&nbsp; Visual inspectionTher ...</p>
                         <p class="deailsbtn">
                             <a href="109.html">查看详情</a>
@@ -281,7 +298,6 @@
                     <dd>
                         <h3><a href="1081.html">Key Points of Using Cast Pipe Mould</a></h3>
                         <span class="time">2022-04-11 </span>
-                         <!-- <span class="click">5</span> -->
                         <p class="deails"> The process discipline and casting process as well ...</p>
                         <p class="deailsbtn">
                             <a href="1081.html">查看详情</a>
@@ -296,7 +312,6 @@
                     <dd>
                         <h3><a href="1071.html">Preparations before Using the Casting Pipe Mould</a></h3>
                         <span class="time">2022-04-04 </span>
-                         <!-- <span class="click">3</span> -->
                         <p class="deails"> When a new pipe mould is used for the first time,  ...</p>
                         <p class="deailsbtn">
                             <a href="1071.html">查看详情</a>
@@ -311,7 +326,6 @@
                     <dd>
                         <h3><a href="1061.html">Obtained a national utility model patent</a></h3>
                         <span class="time">2022-03-28 </span>
-                         <!-- <span class="click">5</span> -->
                         <p class="deails"> </p>
                         <p class="deailsbtn">
                             <a href="1061.html">查看详情</a>
@@ -326,16 +340,15 @@
                     <dd>
                         <h3><a href="105.html">Causes If Affecting Service Life of Casting Pipe Mould and Prevention</a></h3>
                         <span class="time">2022-03-21 </span>
-                         <!-- <span class="click">4</span> -->
                         <p class="deails"> The failure of the pipe mould results from the inc ...</p>
                         <p class="deailsbtn">
                             <a href="105.html">查看详情</a>
                         </p>
                     </dd>
-                </dl>
+                </dl> -->
                               
             </div>
-            <div class="pagess">
+            <!-- <div class="pagess">
             <ul>
                <li><a href="">首页</a></li>
 					<li><a href="#">上一页</a></li>
@@ -343,7 +356,7 @@
 					<li><a href="http://en.chapmachman.com/a/107/2">下一页</a></li>
 					<li><a href="http://en.chapmachman.com/a/107/2">尾页</a></li>
             </ul>
-          </div>
+          </div> -->
         </div>
 
 <!-- footer -->
